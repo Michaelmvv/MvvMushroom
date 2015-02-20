@@ -107,6 +107,7 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 
 				try {
 					Wool wool = (Wool) event.getBlock();
+					log.info("Its Wool!");
 					if (wool.getColor() == DyeColor.RED) {
 						event.getBlock().setType(Material.RED_MUSHROOM);
 						event.getBlock().setTypeId(15);
@@ -121,7 +122,6 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 
 				} catch (Exception e) {
 					log.warning("Oh NO!!!");
-					log.warning("Not wool or something");
 
 				}
 			}
