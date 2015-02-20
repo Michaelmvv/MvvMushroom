@@ -1,0 +1,14 @@
+name: MvvMushroomHelper
+author: michaelmvv
+version: 1
+description:Place mushrooms EZ!
+main: opToggle.Toggle
+commands:
+  ToggleMushroom:
+    description: Toggles Mushroom placing
+    permission: mushroom.toggle
+    permission-message: No Permission
+  MushroomUpdateCheck:
+    description: Check for MvvMushroomHelper Updates
+    permission: mushroom.updatecheck
+    permission-message: No Permission

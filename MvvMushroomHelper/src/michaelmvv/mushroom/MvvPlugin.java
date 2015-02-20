@@ -58,15 +58,22 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 				}
 			}
 		}
+		if (command.getName().equalsIgnoreCase("MushroomUpdateCheck")) {
+			if (sender instanceof Player) {
+				if (sender.hasPermission("mushroom.updatecheck")) {
+					UpdateCheck();
+				}
+			}
+		}
 
-		return super.onCommand(sender, command, label, args);
+		return false;
 	}
 
 	public void UpdateCheck() {
 		ArrayList<String> information = new ArrayList<String>();
 		try {
 			URL remoteFile = new URL(
-					"NYI");
+					"https://raw.githubusercontent.com/Michaelmvv/MvvMushroom/master/Update%20and%20DL/Update.txt");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					remoteFile.openStream()));
 			for (int i = 0; i < 3; i++) {
@@ -83,7 +90,7 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 					+ " ) is not in sync with github (Ver. "
 					+ information.get(0) + ")");
 			log.info("Get the update at: " + ChatColor.GREEN
-					+ "NYI");
+					+ "https://github.com/Michaelmvv/MvvMushroom");
 			hasUpdate = true;
 		}
 
@@ -113,6 +120,8 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 					}
 
 				} catch (Exception e) {
+					log.warning("Oh NO!!!");
+					log.warning("Not wool or something");
 
 				}
 			}
