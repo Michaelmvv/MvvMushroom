@@ -2,7 +2,7 @@ name: MvvMushroomHelper
 author: michaelmvv
 version: 1
 description:Place mushrooms EZ!
-main: opToggle.Toggle
+main: michaelmvv.mushroom.MvvPlugin
 commands:
   ToggleMushroom:
     description: Toggles Mushroom placing
