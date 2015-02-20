@@ -24,12 +24,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class MvvPlugin extends JavaPlugin implements Listener {
 	HashSet<UUID> enabled_users = new HashSet<UUID>();
 	Logger log;
-	boolean hasUpdate=false;
+	boolean hasUpdate = false;
 	String ver;
 
 	@Override
 	public void onEnable() {
-		
+
 		log = Bukkit.getLogger();
 		log.info("MvvMushroom Plugin Starting");
 		getServer().getPluginManager().registerEvents(this, this);
@@ -96,7 +96,6 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 
 	}
 
-	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
@@ -106,18 +105,23 @@ public class MvvPlugin extends JavaPlugin implements Listener {
 			if (block == Material.WOOL) {
 
 				try {
-					Wool wool = (Wool) event.getBlock();
-					log.info("Its Wool!");
+					Wool wool = (Wool) event.getBlockPlaced();
+					log.info("Block to wool done");
+
 					if (wool.getColor() == DyeColor.RED) {
+						log.info("Red");
 						event.getBlock().setType(Material.RED_MUSHROOM);
 						event.getBlock().setTypeId(15);
+
 					}
-					if (wool.getColor()==DyeColor.BROWN) {
+					if (wool.getColor() == DyeColor.BROWN) {
+						log.info("Brown");
 						event.getBlock().setType(Material.BROWN_MUSHROOM);
 						event.getBlock().setTypeId(15);
+
 					}
-					if (wool.getColor()== DyeColor.WHITE) {
-						
+					if (wool.getColor() == DyeColor.WHITE) {
+						log.info("White");
 					}
 
 				} catch (Exception e) {
